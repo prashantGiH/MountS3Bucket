@@ -26,23 +26,23 @@ Steps:-  Mount S3 Bucket on EC2 Instance.
             9) Commands :- 
                             # sudo su
                             # yum update -y
-	                        	# yum install awscli -y
-		                        # sudo yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel
-	                         	# git clone https://github.com/s3fs-fuse/s3fs-fuse.git
-		                        # cd s3fs-fuse
+	                    # yum install awscli -y
+		            # sudo yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel
+	                    # git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+		            # cd s3fs-fuse
                             # ls
-		                        # ./autogen.sh
-		                        # ./configure --prefix=/usr --with-openssl
-	                        	# sudo make install
-	                        	# which s3fs
-		                        # touch /etc/passwd-s3fs
-		                        # vim /etc/passwd-s3fs 
-		                             In that file enter access-key:secret-key and save it.
-		                        # sudo chmod 600 /etc/passwd-s3fs
-		                        # mkdir /Bucketmount
-	                        	# s3fs aws-grantee-user -o use_cache=/tmp -o uid=1001 -o mp_umask=002 /Bucketmount
-				                        This is for Mounting.
-                        		# df -hT    [Mounting Bucket will show].
+		            # ./autogen.sh
+		            # ./configure --prefix=/usr --with-openssl
+	                    # sudo make install
+	                    # which s3fs
+		            # touch /etc/passwd-s3fs
+		            # vim /etc/passwd-s3fs 
+		                    In that file enter access-key:secret-key and save it.
+		            # sudo chmod 600 /etc/passwd-s3fs
+		            # mkdir /Bucketmount
+	                    # s3fs aws-grantee-user -o use_cache=/tmp -o uid=1001 -o mp_umask=002 /Bucketmount
+				 This is for Mounting.
+                            # df -hT    [Mounting Bucket will show].
                             # ls
                             # cd /Bucketmount
                             # ls
